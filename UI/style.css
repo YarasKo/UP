@@ -1,32 +1,8 @@
-
-
 body {
-	display: flex;
-	font-size: 15px;
+	font-size: 16px;
 	background: black;
-	flex-direction: column;
-}
-
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 1;
-}
-
-.wrap {
-	display: flex;
-	font-size: 15px;
-	background: black;
-	flex-direction: column;
+    font-family: Spartan;
+    font-size:15px;
 }
 
 .container {
@@ -47,6 +23,7 @@ h6 {
 	color: darkgrey;
 	font-family: Audiowide;
 	transition: 1s;
+	cursor: default;
 }
 
 .logo:hover {
@@ -61,7 +38,7 @@ h6 {
 	transition: 1s;
 	position: sticky;
 	margin: 0 5%;
-	/*background-color: black;*/
+	cursor: default;
 }
 
 .motto:hover {
@@ -72,7 +49,7 @@ h6 {
 	display: inline-block;
 	margin: 0 15px;
 	position: relative;
-	/*background-color: black;*/
+	cursor: default;
 	color: darkgray;
 	transition: color 0.2s linear;
 }
@@ -99,18 +76,18 @@ h6 {
 	opacity: 1;
 }
 
-.navlink2 {
+.filter {
 	display: inline-flex;
 	margin: 0 30%;
 	position: relative;
-	/*background-color: black;*/
+	cursor: default;
 	color: darkgray;
 	font-family: audiowide;
 	font-size: 899;
 	transition: color 0.2s linear;
 }
 
-.navlink2:after {
+.filter:after {
 	content: "";
 	display: block;
 	width: 100%;
@@ -124,11 +101,11 @@ h6 {
 	transition: 1s;
 }
 
-.navlink2:hover {
+.filter:hover {
 	color: white;
 }
 
-.navlink2:hover:after {
+.filter:hover:after {
 	opacity: 1;
 }
 
@@ -146,7 +123,7 @@ h6 {
 	margin: 10 auto;
 }
 
-.biggerpost {
+.post-container {
 	color: darkgray;
 	margin-top: 2px;
 	border-radius: 6px;
@@ -168,73 +145,80 @@ h6 {
 	background-color: #404040;
 }
 
-.info_about_post {
+.info-about-post {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	display: inline-block;
 	margin: 0 15px;
-	position: relative;
+	align-content: center;
+}
+
+.info {
+    margin-top: 3px;
+	cursor: default;
+	text-align: center;
 }
 
 .fit-picture {
-	margin: 0 auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 	width: 50px;
 	height: 50px;
 	border-radius: 6px;
 }
 
-.text {
-	vertical-align: middle;
+.fa-edit,
+.fa-trash-alt,
+.fa-angle-up {
+	color: darkgray!important;
+	transition: 1s;
 }
 
-.smallerbutt {
+.smallerbutton {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 }
 
-.butt {
-	display: flex;
-}
-
-.buttTags {
-	display: flex;
-	justify-content: center
-}
-
-.b1 {
+.action-button {
 	background-color: #404040;
 	border-radius: 6px;
 	border-color: darkgray;
 	transition: 1s;
 }
 
-.b1:hover {
+.action-button:hover {
 	background-color: lightgray;
 	border-radius: 6px;
 }
 
-.t1 {
+.action-button:hover>.fa-angle-up,
+.action-button:hover>.fa-edit,
+.action-button:hover>.fa-trash-alt {
+	color: black!important;
+}
+
+.tag {
 	background-color: darkcyan;
 	border-radius: 6px;
 	border-color: darkcyan;
 	transition: 1s;
 }
 
-.t1:hover {
+.tag:hover {
 	background-color: lightgray;
 	border-radius: 6px;
 }
 
-.nextButton {
+.next-button {
+    font-family: audiowide;
+    font-size: 20px;
 	color: darkgray;
 	background-color: #404040;
 	border-radius: 6px;
 	transition: 1s;
 }
 
-.nextButton:hover {
+.next-button:hover {
 	color: black;
 	background-color: lightgray;
 	border-radius: 6px;
@@ -256,7 +240,6 @@ h6 {
 	font-size: 13px;
 	position: relative;
 	font-family: Bad Script;
-	/*background-color: black;*/
 	color: darkgray;
 	transition: color 0.2s linear;
 }
