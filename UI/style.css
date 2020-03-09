@@ -76,8 +76,9 @@ body {
 }
 
 .filter {
-	
-	margin: 0 30%;
+	display:flex;
+    justify-content: center;
+	margin: 0 20%;
 	position: relative;
 	cursor: default;
 	color: darkgray;
@@ -166,6 +167,7 @@ main {
 }
 
 .action-button {
+    color: darkgray;
 	background-color: #404040;
 	border-radius: 6px;
 	border-color: darkgray;
@@ -175,6 +177,7 @@ main {
 .action-button:hover {
 	background-color: lightgray;
 	border-radius: 6px;
+    color: black;
 }
 
 .action-button:hover>.fa-angle-up,
