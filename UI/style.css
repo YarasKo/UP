@@ -1,5 +1,4 @@
 body {
-	font-size: 16px;
 	background: black;
     font-family: Spartan;
     font-size:15px;
@@ -63,7 +62,7 @@ body {
 	background-color: white;
 	position: absolute;
 	top: 100%;
-	left 0;
+	left: 0;
 	z-index: 1;
 	transition: 1s;
 }
@@ -77,13 +76,12 @@ body {
 }
 
 .filter {
-	display: inline-flex;
+	
 	margin: 0 30%;
 	position: relative;
 	cursor: default;
 	color: darkgray;
 	font-family: audiowide;
-	font-size: 899;
 	transition: color 0.2s linear;
 }
 
@@ -109,8 +107,8 @@ body {
 	opacity: 1;
 }
 
-.main {
-	display: inline-block;
+main {
+	
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
@@ -118,19 +116,7 @@ body {
 	width: 80%;
 }
 
-.feed {
-	display: inline-block;
-	margin: 10 auto;
-}
 
-.post-container {
-	color: darkgray;
-	margin-top: 2px;
-	border-radius: 6px;
-	display: flex;
-	flex-direction: column;
-	background-color: #333333;
-}
 
 .post {
 	color: darkgray;
@@ -210,6 +196,8 @@ body {
 }
 
 .next-button {
+    
+   
     font-family: audiowide;
     font-size: 20px;
 	color: darkgray;
@@ -224,7 +212,7 @@ body {
 	border-radius: 6px;
 }
 
-.footercontainer {
+.footer-container {
 	width: 100%;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -244,7 +232,7 @@ body {
 	transition: color 0.2s linear;
 }
 
-.footercontainer>.logo {
+.footer-container>.logo {
 	font-size: 13px;
 }
 
