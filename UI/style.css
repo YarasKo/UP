@@ -1,0 +1,241 @@
+body {
+	background: black;
+    font-family: Spartan;
+    font-size:15px;
+}
+
+.container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.hin {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	font-size: 30px;
+	font-weight: 600;
+	color: darkgrey;
+	font-family: Audiowide;
+	transition: 1s;
+	cursor: default;
+}
+
+.logo:hover {
+	color: white;
+}
+
+.motto {
+	font-size: 14px;
+	font-weight: 300;
+	color: darkgrey;
+	font-family: Bad Script;
+	transition: 1s;
+	position: sticky;
+	margin: 0 5%;
+	cursor: default;
+}
+
+.motto:hover {
+	color: white;
+}
+
+.navlink {
+	display: inline-block;
+	margin: 0 15px;
+	position: relative;
+	cursor: default;
+	color: darkgray;
+	transition: color 0.2s linear;
+}
+
+.navlink:after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 3px;
+	opacity: 0;
+	background-color: white;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1;
+	transition: 1s;
+}
+
+.navlink:hover {
+	color: white;
+}
+
+.navlink:hover:after {
+	opacity: 1;
+}
+
+.filter {
+	display:flex;
+    justify-content: center;
+	margin: 0 20%;
+	position: relative;
+	cursor: default;
+	color: darkgray;
+	font-family: audiowide;
+	transition: color 0.2s linear;
+}
+
+.filter:after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 3px;
+	opacity: 0;
+	background-color: white;
+	position: absolute;
+	top: 100%;
+	left 0;
+	z-index: 1;
+	transition: 1s;
+}
+
+.filter:hover {
+	color: white;
+}
+
+.filter:hover:after {
+	opacity: 1;
+}
+
+main {
+	
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 80%;
+}
+
+
+
+.post {
+	color: darkgray;
+	margin-top: 2px;
+	border-radius: 6px;
+	display: flex;
+	justify-content: space-between;
+	vertical-align: baseline;
+	width: 100%;
+	border-width: 3px;
+	border-color: black;
+	background-color: #404040;
+}
+
+.info-about-post {
+	display: flex;
+	margin: 0 15px;
+	align-content: center;
+}
+
+.info {
+    margin-top: 3px;
+	cursor: default;
+	text-align: center;
+}
+
+.fit-picture {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50px;
+	height: 50px;
+	border-radius: 6px;
+}
+
+.fa-edit,
+.fa-trash-alt,
+.fa-angle-up {
+	color: darkgray!important;
+	transition: 1s;
+}
+
+.smallerbutton {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.action-button {
+    color: darkgray;
+	background-color: #404040;
+	border-radius: 6px;
+	border-color: darkgray;
+	transition: 1s;
+}
+
+.action-button:hover {
+	background-color: lightgray;
+	border-radius: 6px;
+    color: black;
+}
+
+.action-button:hover>.fa-angle-up,
+.action-button:hover>.fa-edit,
+.action-button:hover>.fa-trash-alt {
+	color: black!important;
+}
+
+.tag {
+	background-color: darkcyan;
+	border-radius: 6px;
+	border-color: darkcyan;
+	transition: 1s;
+}
+
+.tag:hover {
+	background-color: lightgray;
+	border-radius: 6px;
+}
+
+.next-button {
+    
+   
+    font-family: audiowide;
+    font-size: 20px;
+	color: darkgray;
+	background-color: #404040;
+	border-radius: 6px;
+	transition: 1s;
+}
+
+.next-button:hover {
+	color: black;
+	background-color: lightgray;
+	border-radius: 6px;
+}
+
+.footer-container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.footlink {
+	display: block;
+	margin: 0 13px;
+	font-size: 13px;
+	position: relative;
+	font-family: Bad Script;
+	color: darkgray;
+	transition: color 0.2s linear;
+}
+
+.footer-container>.logo {
+	font-size: 13px;
+}
+
