@@ -1,11 +1,11 @@
 class PostList{
     constructor(posts) {
-        this.posts=posts;
+        this._posts=posts;
     }
     getPage(start,top,filt){
         let st=start||0;
         let to=top||10;
-        let newArray = [...this.posts];
+        let newArray = [...this._posts];
         if(typeof filt!=='undefined'){
             if(typeof filt.author!='undefined'){
                 newArray=newArray.filter(function (val) {
@@ -41,13 +41,13 @@ class PostList{
         return newArray;
     }
     get(id){
-        return this.posts.find(item => item.id === id);
+        return this._posts.find(item => item.id === id);
     }
      validatePost(post) {
         let flag=false;
         if (typeof post.id!="undefined"&&typeof post.description!="undefined"&&typeof post.author!="undefined"&&typeof post.createdAt!="undefined"&&typeof post.tags!="undefined"&&typeof post.likes!="undefined"){
             if(post.author.length!==0&& post.description.length<200){
-                let unique = this.posts.findIndex(item => item.id === post.id);
+                let unique = this._posts.findIndex(item => item.id === post.id);
                 if(unique===-1){
                     flag= true;
                 }
@@ -58,7 +58,7 @@ class PostList{
     }
     add(post){
         if (this.validatePost(post)){
-            this.posts.push(post);
+            this._posts.push(post);
             return true;
         }
         else return false;
@@ -80,7 +80,7 @@ class PostList{
 
     }
      remove(id) {
-        return this.posts.splice(this.posts.findIndex(item => item.id === id),1);
+        return this._posts.splice(this._posts.findIndex(item => item.id === id),1);
     }
     addAll(array){
         array.forEach(item=> this.add(item));
