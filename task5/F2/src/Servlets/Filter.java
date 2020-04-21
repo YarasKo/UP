@@ -1,9 +1,11 @@
+package Servlets;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@WebFilter(filterName = "Filter")
+@WebFilter(filterName = "Servlets.Filter")
 public class Filter implements javax.servlet.Filter {
     public void destroy() {
     }
