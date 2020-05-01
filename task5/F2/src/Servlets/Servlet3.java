@@ -1,3 +1,5 @@
+package Servlets;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -6,19 +8,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "Servlet2")
-public class Servlet2 extends HttpServlet {
+@WebServlet(name = "Servlets.Servlet3")
+public class Servlet3 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        PrintWriter pw=response.getWriter();
+        response.setContentType("application/json");
+        pw.println("{\"success\" : true}");
+        pw.flush();
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name=request.getParameter("name");
-        PrintWriter pw=response.getWriter();
-
-        pw.println("<html>");
-        pw.println("<h1 '>Name is" +name+" </h1>");
-        pw.println("</html>");
 
     }
 }
