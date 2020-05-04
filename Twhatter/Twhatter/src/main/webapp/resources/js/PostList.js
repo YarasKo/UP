@@ -1,3 +1,5 @@
+let currentUser='User';
+let currentFilter={};
 class PostList{
     constructor(posts) {
         this._posts=posts;
@@ -43,7 +45,7 @@ class PostList{
     get(id){
         return this._posts.find(item => item.id === id);
     }
-     validatePost(post) {
+    validatePost(post) {
         let flag=false;
         if (typeof post.id!="undefined"&&typeof post.description!="undefined"&&typeof post.author!="undefined"&&typeof post.createdAt!="undefined"&&typeof post.tags!="undefined"&&typeof post.likes!="undefined"){
             if(post.author.length!==0&& post.description.length<200){
@@ -59,6 +61,9 @@ class PostList{
     add(post){
         if (this.validatePost(post)){
             this._posts.push(post);
+            this._posts.sort(function (post1,post2) {
+                return post2.createdAt-post1.createdAt;
+            });
             return true;
         }
         else return false;
@@ -79,7 +84,7 @@ class PostList{
             return false;}
 
     }
-     remove(id) {
+    remove(id) {
         return this._posts.splice(this._posts.findIndex(item => item.id === id),1);
     }
     addAll(array){
@@ -87,10 +92,11 @@ class PostList{
     }
 }
 
+
 let postsA=[{
     id:1,
     createdAt: new Date('2020-04-17T23:00:00'),
-    author: 'Иванов Иван',
+    author: 'User',
     description: 'Post text 1',
     PhotoLink: 'null',
     tags:['tag0','tag0'],
@@ -126,7 +132,7 @@ let postsA=[{
     {
         id:5,
         createdAt: new Date('2020-03-17T23:00:05'),
-        author: 'Иванов Иван5',
+        author: 'User',
         description: 'Post text 4',
         PhotoLink: 'null',
         tags:['tag3','tag4'],
@@ -289,24 +295,5 @@ let postsA=[{
         likes:['user1'],
     }
 ];
-let pl=new PostList(postsA); 
-console.log(pl.getPage(0,10));
-console.log(pl.getPage(10,10));
-console.log(pl.getPage(0,10,{author:"Иванов Иван5"}));
-console.log(pl.getPage(0,10,{tags:['tag1','tag2']}));
-console.log(pl.getPage(0,10,{createdAt:new Date('2020-03-17T23:00:00')}));
-console.log(pl.get(3));
-console.log(pl.add( {
-    id:22,
-    createdAt: new Date('2020-03-17T23:00:18'),
-    author: 'Иванов Иван22',
-    description: 'Post text 22',
-    tags:[],
-    likes:[],
-}));
-console.log(pl.get(22));
-console.log(pl.edit(22,{ description: 'NEW Post text 22',}));
-console.log(pl.get(22));
-console.log(pl.remove(22));
-console.log(pl.getPage(20,10));
+let pl=new PostList(postsA);
 
