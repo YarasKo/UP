@@ -1,4 +1,4 @@
-package PostWork;
+package postWorkService;
 import org.json.simple.JSONObject;
 
 import java.util.List;
