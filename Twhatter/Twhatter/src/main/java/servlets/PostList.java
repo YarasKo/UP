@@ -1,7 +1,7 @@
-package Servlets;
+package servlets;
 
-import PostWork.Tweet;
-import PostWork.TweetsWork;
+import postWorkService.Tweet;
+import postWorkService.TwhatterService;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class PostList extends HttpServlet {
 
-    private TweetsWork posts = new TweetsWork();
+    private TwhatterService posts = new TwhatterService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int top, skip;

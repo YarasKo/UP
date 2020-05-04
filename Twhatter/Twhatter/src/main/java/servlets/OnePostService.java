@@ -1,7 +1,7 @@
-package Servlets;
+package servlets;
 
-import PostWork.Tweet;
-import PostWork.TweetsWork;
+import postWorkService.Tweet;
+import postWorkService.TwhatterService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -11,8 +11,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class OnePost extends HttpServlet {
-    private TweetsWork posts = new TweetsWork();
+public class OnePostService extends HttpServlet {
+    private TwhatterService posts = new TwhatterService();
     @Override
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // response.getOutputStream().println("yes, it works");

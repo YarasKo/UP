@@ -1,4 +1,4 @@
-package PostWork;
+package postWorkService;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.Map;
 import com.google.gson.Gson;
 
-public class TweetsWork {
-    private List<Tweet> TWList;
+public class TwhatterService {
+    private List<Tweet> tweets;
 
-    public TweetsWork(){
-        this.TWList = new ArrayList<Tweet>(Arrays.asList(
+    public TwhatterService(){
+        this.tweets = new ArrayList<Tweet>(Arrays.asList(
                 new Tweet(1, "This is first post", "2020-01-17T23:00:00",
                         "Niki Minaj",
                         "https://assets.website-files.com/5b60b59862612627d9c3979b/5bcf4195e65fe36c1758df18_bitchpng-p-1600.png",
@@ -44,18 +44,18 @@ public class TweetsWork {
         List<Tweet> filteredPosts = new ArrayList<Tweet>();
         for(Map.Entry pair : filterConfig.entrySet()) {
             if (pair.getKey().equals("author")) {
-                TWList.stream()
+                tweets.stream()
                         .filter(tweet -> tweet.getAuthor().toLowerCase().contains(pair.getValue().toString().toLowerCase()))
                         .forEach(filteredPosts::add);
             }
-            else if (pair.getKey().equals("creationDate")) {
-                TWList.stream()
+            else if ("creationDate".equals(pair.getKey())) {
+                tweets.stream()
                         .filter(tweet -> tweet.getCreatedAt().equals(pair.getValue()))
                         .forEach(filteredPosts::add);
             }
         }
         if(filterConfig.size() == 0) {
-            filteredPosts = new ArrayList<Tweet>(TWList);
+            filteredPosts = new ArrayList<Tweet>(tweets);
         }
         if(top > filteredPosts.size()) {
             top = filteredPosts.size();
@@ -72,7 +72,7 @@ public class TweetsWork {
     }
 
     public Tweet getPost(int id) {
-        for (Tweet tweet: TWList) {
+        for (Tweet tweet: tweets) {
             if (tweet.getId() == id) {
                 return tweet;
             }
@@ -81,11 +81,11 @@ public class TweetsWork {
     }
 
     public boolean validatePost(Tweet tweet) {
-        for(Tweet post : TWList) {
-            if (post.getId() == tweet.getId()) {
+
+            if (this.getPost(tweet.getId())!=null) {
                 return false;
             }
-        }
+
         if(tweet.getDescription() == null || tweet.getDescription().length() > 200)
             return false;
         if(tweet.getAuthor() == null)
@@ -99,7 +99,7 @@ public class TweetsWork {
 
     public boolean addPost(Tweet tweet) {
         if(validatePost(tweet)) {
-            TWList.add(tweet);
+            tweets.add(tweet);
             return true;
        }
         else
@@ -123,7 +123,7 @@ public class TweetsWork {
     public boolean removePost(int id) {
         Tweet tweet = getPost(id);
         if(tweet != null) {
-            TWList.remove(tweet);
+            tweets.remove(tweet);
             return true;
         }else {
             return false;
