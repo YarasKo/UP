@@ -1,0 +1,4 @@
+SELECT DISTINCT
+    NAME
+FROM
+    user
